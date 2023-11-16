@@ -1,2 +1,2 @@
 # holbertonschool-printf
-new project
+test
