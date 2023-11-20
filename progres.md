@@ -9,13 +9,13 @@ readme_branch.md  README.md
 
 > sgc@penguin:~/projects/holbertonschool-printf$ *git branch*
 
-  elizabeth
+ elizabeth
 
-* main
+ * main
 
-  nicole
+ nicole
 
-  sheila
+ sheila
 
 > sgc@penguin:~/projects/holbertonschool-printf$ *git switch sheila*
 Switched to branch 'sheila'
@@ -23,11 +23,11 @@ Your branch is up to date with 'origin/sheila'.
 
 > sgc@penguin:~/projects/holbertonschool-printf$ *git branch*
 
-  elizabeth
+ elizabeth
  
-  main
+ main
 
-  nicole
+ nicole
 
 * sheila
 
