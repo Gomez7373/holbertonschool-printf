@@ -12,5 +12,7 @@ typedef struct print
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int c_printf(va_list args);
+int s_printf(va_list args);
 
 #endif /* MAIN_H */
