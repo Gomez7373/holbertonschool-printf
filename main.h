@@ -7,8 +7,8 @@
 typedef struct print
 {
 	char *cs;
-	int (f*)();
-}conversion_specifiers
+	int (*f)();
+}conversion_specifiers;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
