@@ -22,11 +22,20 @@ int _printf(const char *format, ...)
             switch (*format)
             {
                 case 'c':
-                    count += write(1, &va_arg(args, int), 1);
-                    break;
+                    {
+                        char ch = (char)va_arg(args, int);
+                        count += write(1, &ch, 1);
+                        break;
+                    }
                 case 's':
-                    count += write(1, va_arg(args, char *), 1);
-                    break;
+                    {
+                        char *str = va_arg(args, char *);
+                        int len = 0;
+                        while (str[len])
+                            len++;
+                        count += write(1, str, len);
+                        break;
+                    }
                 case '%':
                     count += write(1, "%", 1);
                     break;
