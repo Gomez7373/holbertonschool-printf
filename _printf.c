@@ -2,11 +2,11 @@
 #include <unistd.h>
 
 /**
- * _printf - Custom printf function
- * @format: Format string with conversion specifiers
- *
- * Return: Number of characters printed (excluding the null byte)
- */
+* _printf - Custom printf function
+* @format: Format string with conversion specifiers
+*
+* Return: Number of characters printed (excluding the null byte)
+*/
 int _printf(const char *format, ...)
 {
 	conversion_specifiers c[] = {
