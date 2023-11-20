@@ -2,11 +2,13 @@
 #include <unistd.h>
 
 /**
- * _printf - Custom printf function
- * @format: Format string with conversion specifiers
+ * _printf - Custom printf function that produces output
+ * according to a format
+ * @format: Character string composed of zero or more directives
  *
  * Return: Number of characters printed (excluding the null byte)
  */
+
 int _printf(const char *format, ...)
 {
     va_list args;
@@ -53,6 +55,6 @@ int _printf(const char *format, ...)
 
     va_end(args);
 
-    return count;
+    return (count);
 }
 
