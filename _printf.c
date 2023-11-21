@@ -1,82 +1,46 @@
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "main.h"
 
 /**
- * _printf - Custom printf function that produces output
- * according to a format
- * @format: Character string composed of zero or more directives
- *
- * Return: Number of characters printed (excluding the null byte)
- */
+* _printf - Custom printf function
+* @format: Format string with conversion specifiers
+*
+* Return: Number of characters printed (excluding the null byte)
+*/
 
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int count = 0;
+	conversion_specifiers c[] = {
+		{"%c", c_printf}, {"%s", s_printf}
+	};
+	va_list list;
+	int x = 0, y, length = 0, found_match = 0;
 
-    va_start(args, format);
-
-    while (*format)
-    {
-        if (*format == '%')
-        {
-            format++; /* Move past '%' */
-            switch (*format)
-            {
-                case 'c':
-                    {
-                        char c = (char)va_arg(args, int);
-                        write(1, &c, 1);
-			count++;
-                        break;
-                    }
-                case 's':
-                    {
-                        char *str = va_arg(args, char *);
-                        while (*str)
-			{
-				write(1, str, 1);
-				str++;
-				count++;
-			}
-			break;
-		    }
-		case 'd':
-		    {
-			    int num = va_arg(args, int);
-			    char buffer[12];
-			    int len = snprintf(buffer, sizeof(buffer), "%d", num);
-			    write(1, buffer, len);
-			    count += len;
-			    break;
-		    }
-		case 'i':
-		    {
-			    int num = va_arg(args, int);
-			    char buffer[12];
-			    int len = snprintf(buffer, sizeof(buffer), "%d", num);
-			    write(1, buffer, len);
-			    count += len;
-			    break;
-		    }
-                case '%':
-		    write(1, "%", 1);
-		    count++;
-		    break;
-                default:
-		    break;
-	    }
-	}
-	else
+	va_start(list, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
-		write(1, format, 1);
-		count++;
+		return (-1);
 	}
-	format++;
-    }
 
-    va_end(args);
-
-    return (count);
+	while (format[x] != '\0')
+	{
+		found_match = 0;
+		for (y = 0; y < 2; y++)
+		{
+			if (c[y].cs[0] == format[x] && c[y].cs[1] == format[x + 1])
+			{
+				length += c[y].f(list);
+				x += 2;
+				found_match = 1;
+				break;
+			}
+		}
+		if (!found_match)
+		{
+			_putchar(format[x]);
+			length++;
+			x++;
+		}
+	}
+	va_end(list);
+	return (length);
 }
