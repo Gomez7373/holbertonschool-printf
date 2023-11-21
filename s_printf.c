@@ -18,9 +18,14 @@ int s_printf(va_list args)
 		x++;
 	}
 
-	if (s == NULL)
+	if (!s)
 	{
 		s = "(null)";
+		x = 0;
+		for (length = 0; s[x] != '\0'; length++)
+		{
+			x++;
+		}
 		for (x = 0; x < 6; x++)
 		{
 			_putchar(s[x]);
