@@ -10,7 +10,8 @@
 int _printf(const char *format, ...)
 {
 	conversion_specifiers c[] = {
-		{"%c", c_printf}, {"%s", s_printf}, {"%%", pct_printf}
+		{"%c", c_printf}, {"%s", s_printf}, 
+		{"%%", pct_printf}
 	};
 	va_list list;
 	int x = 0, y, length = 0, found_match = 0;
