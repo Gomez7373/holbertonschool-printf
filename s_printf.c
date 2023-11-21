@@ -9,19 +9,16 @@
 int s_printf(va_list args)
 {
 	char *s;
-	int x, length;
-	char *c = *s;
+	int x = 0, length;
 
 	s = va_arg(args, char *);
 
-	*c = *s;
-
-	for (length = 0; *c != '\0'; length++)
+	for (length = 0; s[x] != '\0'; length++)
 	{
-		c++;
+		x++;
 	}
 
-	if (s == NULL)
+	if (s == '\0')
 	{
 		s = "(null)";
 		for (x = 0; x < 6; x++)
