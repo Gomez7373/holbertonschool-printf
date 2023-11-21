@@ -18,7 +18,7 @@ int s_printf(va_list args)
 		x++;
 	}
 
-	if (s == '0')
+	if (s == NULL)
 	{
 		s = "(null)";
 		for (x = 0; x < 6; x++)
