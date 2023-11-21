@@ -1,60 +1,47 @@
-#include <stdarg.h>
-#include <unistd.h>
+#include "main.h"
 
 /**
- * _printf - Custom printf function that produces output
- * according to a format
- * @format: Character string composed of zero or more directives
- *
- * Return: Number of characters printed (excluding the null byte)
- */
+* _printf - Custom printf function
+* @format: Format string with conversion specifiers
+*
+* Return: Number of characters printed (excluding the null byte)
+*/
 
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int count = 0;
+	conversion_specifiers c[] = {
+		{"%c", c_printf}, {"%s", s_printf}
+	};
+	va_list list;
+	int x = 0, y, length = 0, found_match = 0;
 
-    va_start(args, format);
+	va_start(list, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	{
+		return (-1);
+	}
 
-    while (*format)
-    {
-        if (*format == '%' && (*(format + 1) == 'c' || *(format + 1) == 's'))
-        {
-            format++; /* Move past '%' */
-            switch (*format)
-            {
-                case 'c':
-                    {
-                        char ch = (char)va_arg(args, int);
-                        count += write(1, &ch, 1);
-                        break;
-                    }
-                case 's':
-                    {
-                        char *str = va_arg(args, char *);
-                        int len = 0;
-                        while (str[len])
-                            len++;
-                        count += write(1, str, len);
-                        break;
-                    }
-                case '%':
-                    count += write(1, "%", 1);
-                    break;
-                default:
-                    count += write(1, &(*format), 1);
-            }
-        }
-        else
-        {
-            count += write(1, &(*format), 1);
-        }
-
-        format++;
-    }
-
-    va_end(args);
-
-    return count;
+	while (format[x] != '\0')
+	{
+		found_match = 0;
+		for (y = 0; y < 2; y++)
+		{
+			if (c[y].cs[0] == format[x] && c[y].cs[1] == format[x + 1])
+			{
+				length += c[y].f(list);
+				x += 2;
+				found_match = 1;
+				break;
+			}
+		}
+		if (!found_match)
+		{
+			_putchar(format[x]);
+			length++;
+			x++;
+		}
+	}
+	va_end(list);
+	return (length);
 }
 
