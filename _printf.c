@@ -20,12 +20,12 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
-	while (format[x])
+	while (format[x] != '\0')
 	{
 		found_match = 0;
 		for (y = 0; y < 2; y++)
 		{
-			if(c[y].cs[0] == format[x] && c[y].cs[1] == format[x + 1])
+			if (c[y].cs[0] == format[x] && c[y].cs[1] == format[x + 1])
 			{
 				length += c[y].f(list);
 				x += 2;

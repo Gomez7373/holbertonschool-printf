@@ -30,7 +30,7 @@ int s_printf(va_list args)
 
 	else
 	{
-		for (x = 0; x == length - 1; x++)
+		for (x = 0; x <= length; x++)
 		{
 			_putchar(s[x]);
 		}
