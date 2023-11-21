@@ -33,8 +33,8 @@ int s_printf(va_list args)
  * s_printf - function that print a string
  * @args: arguments
  * Return: number of characters in the string
- */
-/*
+ 
+
 int s_printf(va_list args)
 {
 	char *s;
@@ -46,8 +46,8 @@ int s_printf(va_list args)
 	{
 		x++;
 	}
-/*testing sgc*/
-/*
+testing sgc
+
 if (!s)
 {
 s = "(null)";
@@ -62,7 +62,7 @@ _putchar(s[x]);
 }
 return (6);
 }
-/**
+
  *
  * this is the one ELi has:
  *
