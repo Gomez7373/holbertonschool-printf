@@ -1,44 +1,42 @@
 #include "main.h"
 
 /**
- * s_printf - function that print a string
- * @args: arguments
- * Return: number of characters in the string
- */
-
+* s_printf - Function that prints a string
+* @args: Arguments
+*
+* Return: Number of characters in the string
+*/
 int s_printf(va_list args)
 {
-	char *s;
-	int x = 0, length;
+char *s;
+int x = 0;
 
-	s = va_arg(args, char *);
+/* Extract the string argument from the variable arguments list */
+s = va_arg(args, char *);
 
-	for (length = 0; s[x] != '\0'; length++)
-	{
-		x++;
-	}
+/* Check if the string is NULL */
+if (!s)
+{
+s = "(null)";
 
-	if (s == NULL)
-	{
-		s = "(null)";
-		x = 0;
-		for (length = 0; s[x] != '\0'; length++)
-		{
-			x++;
-		}
-		for (x = 0; x < length; x++)
-		{
-			_putchar(s[x]);
-		}
-		return (length);
-	}
+/* Print each character of the "(null)" string */
+for (x = 0; s[x] != '\0'; x++)
+{
+_putchar(s[x]);
+}
 
-	else
-	{
-		for (x = 0; x < length; x++)
-		{
-			_putchar(s[x]);
-		}
-		return (length);
-	}
+/* Return the length of "(null)" */
+return (6);  /* Assuming you are returning the length of "(null)" */
+}
+else
+{
+/* Print each character of the provided string */
+for (x = 0; s[x] != '\0'; x++)
+{
+_putchar(s[x]);
+}
+
+/* Return the actual length of the string */
+return (x);
+}
 }
