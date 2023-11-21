@@ -13,7 +13,7 @@ int s_printf(va_list args)
 
 	s = va_arg(args, char *);
 
-	for (length = 0; s != '\0'; length++)
+	for (length = 0; *s != '\0'; length++)
 	{
 		s++;
 	}
