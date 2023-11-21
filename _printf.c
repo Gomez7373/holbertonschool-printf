@@ -17,10 +17,15 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	{
+		return (-1);
+	}
+
 	while (format[x] != '\0')
 	{
 		found_match = 0;
-		for (y = 0; y < 2; y++)
+		for (y = 0; y < 3; y++)
 		{
 			if (c[y].cs[0] == format[x] && c[y].cs[1] == format[x + 1])
 			{
