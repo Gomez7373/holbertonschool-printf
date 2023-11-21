@@ -6,7 +6,6 @@
 
 #include <stdarg.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
 
 typedef struct print
@@ -19,5 +18,6 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int c_printf(va_list args);
 int s_printf(va_list args);
+int pct_printf(void);
 
 #endif /* MAIN_H */
