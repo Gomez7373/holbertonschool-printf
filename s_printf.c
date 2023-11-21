@@ -13,9 +13,9 @@ int s_printf(va_list args)
 
 	s = va_arg(args, char *);
 
-	for (length = 0; s[x] != '\0'; length++)
+	for (length = 0; s != '\0'; length++)
 	{
-		x++;
+		s++;
 	}
 
 	if (s == NULL)
@@ -30,7 +30,7 @@ int s_printf(va_list args)
 
 	else
 	{
-		for (x = 0; x <= length; x++)
+		for (x = 0; x < length; x++)
 		{
 			_putchar(s[x]);
 		}
