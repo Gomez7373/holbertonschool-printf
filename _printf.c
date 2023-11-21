@@ -10,12 +10,13 @@
 int _printf(const char *format, ...)
 {
 	conversion_specifiers c[] = {
-		{"%c", c_printf}, {"%s", s_printf}
+		{"%c", c_printf}, {"%s", s_printf}, {"%%", pct_printf}
 	};
 	va_list list;
 	int x = 0, y, length = 0, found_match = 0;
 
 	va_start(list, format);
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
@@ -24,7 +25,7 @@ int _printf(const char *format, ...)
 	while (format[x] != '\0')
 	{
 		found_match = 0;
-		for (y = 0; y < 2; y++)
+		for (y = 0; y < 3; y++)
 		{
 			if (c[y].cs[0] == format[x] && c[y].cs[1] == format[x + 1])
 			{

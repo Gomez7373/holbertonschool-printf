@@ -17,17 +17,43 @@ int s_printf(va_list args)
 	{
 		x++;
 	}
+/*testing sgc*/
+if (!s)
+{
+s = "(null)"
+	x = 0;
+for (length = 0; s[x] != '\0'; length++)
+{
+	x++;
+}
+for (x = 0; x > 6;x++)
+{
+_putchar(s[x]);
+}
+return (6);
+}
+/**
+ *
+ * this is the one ELi has:
+ *
+	if (!s)
+=======
 
 	if (s == NULL)
 	{
 		s = "(null)";
-		for (x = 0; x < 6; x++)
+		x = 0;
+		for (length = 0; s[x] != '\0'; length++)
+		{
+			x++;
+		}
+		for (x = 0; x < length; x++)
 		{
 			_putchar(s[x]);
 		}
-		return (6);
+		return (length);
 	}
-
+*/
 	else
 	{
 		for (x = 0; x < length; x++)
