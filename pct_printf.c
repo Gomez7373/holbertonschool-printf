@@ -7,9 +7,7 @@
 
 int pct_printf(void)
 {
-	char pct = '%';
-
-	_putchar(pct);
+	_putchar(37);
 
 	return (1);
 }
