@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
 
 /**
@@ -18,43 +19,64 @@ int _printf(const char *format, ...)
 
     while (*format)
     {
-        if (*format == '%' && (*(format + 1) == 'c' || *(format + 1) == 's'))
+        if (*format == '%')
         {
             format++; /* Move past '%' */
             switch (*format)
             {
                 case 'c':
                     {
-                        char ch = (char)va_arg(args, int);
-                        count += write(1, &ch, 1);
+                        char c = (char)va_arg(args, int);
+                        write(1, &c, 1);
+			count++;
                         break;
                     }
                 case 's':
                     {
                         char *str = va_arg(args, char *);
-                        int len = 0;
-                        while (str[len])
-                            len++;
-                        count += write(1, str, len);
-                        break;
-                    }
+                        while (*str)
+			{
+				write(1, str, 1);
+				str++;
+				count++;
+			}
+			break;
+		    }
+		case 'd':
+		    {
+			    int num = va_arg(args, int);
+			    char buffer[12];
+			    int len = snprintf(buffer, sizeof(buffer), "%d", num);
+			    write(1, buffer, len);
+			    count += len;
+			    break;
+		    }
+		case 'i':
+		    {
+			    int num = va_arg(args, int);
+			    char buffer[12];
+			    int len = snprintf(buffer, sizeof(buffer), "%d", num);
+			    write(1, buffer, len);
+			    count += len;
+			    break;
+		    }
                 case '%':
-                    count += write(1, "%", 1);
-                    break;
+		    write(1, "%", 1);
+		    count++;
+		    break;
                 default:
-                    count += write(1, &(*format), 1);
-            }
-        }
-        else
-        {
-            count += write(1, &(*format), 1);
-        }
-
-        format++;
+		    break;
+	    }
+	}
+	else
+	{
+		write(1, format, 1);
+		count++;
+	}
+	format++;
     }
 
     va_end(args);
 
-    return count;
+    return (count);
 }
-
