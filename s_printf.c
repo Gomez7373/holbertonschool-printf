@@ -8,8 +8,9 @@
 
 int s_printf(va_list args)
 {
-	char *s, *c;
+	char *s;
 	int x, length;
+	char *c = *s;
 
 	s = va_arg(args, char *);
 
