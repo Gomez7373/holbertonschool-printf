@@ -8,12 +8,12 @@
 
 int s_printf(va_list args)
 {
-	char *s;
+	char *s, *c;
 	int x, length;
 
 	s = va_arg(args, char *);
 
-	char *c = s;
+	*c = s;
 
 	for (length = 0; *c != '\0'; length++)
 	{
