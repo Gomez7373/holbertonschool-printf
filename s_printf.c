@@ -20,7 +20,7 @@ int s_printf(va_list args)
 /*testing sgc*/
 if (!s)
 {
-s = "(null)"
+s = "(null)";
 	x = 0;
 for (length = 0; s[x] != '\0'; length++)
 {
