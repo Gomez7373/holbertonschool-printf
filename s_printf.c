@@ -37,6 +37,9 @@ return (6);
  * this is the one ELi has:
  *
 	if (!s)
+=======
+
+	if (s == NULL)
 	{
 		s = "(null)";
 		x = 0;
@@ -44,11 +47,11 @@ return (6);
 		{
 			x++;
 		}
-		for (x = 0; x < 6; x++)
+		for (x = 0; x < length; x++)
 		{
 			_putchar(s[x]);
 		}
-		return (6);
+		return (length);
 	}
 */
 	else
