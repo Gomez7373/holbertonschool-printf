@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
  * _printf - Custom printf function
  * @format: Format string with conversion specifiers
  *
  * Return: Number of characters printed (excluding the null byte)
  */
-
 int _printf(const char *format, ...)
 {
 	conversion_specifiers c[] = {
@@ -25,7 +23,6 @@ int _printf(const char *format, ...)
 	va_list list;
 	int x = 0, y, length = 0, found_match = 0;
 	va_start(list, format);
-
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
