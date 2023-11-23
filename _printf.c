@@ -15,14 +15,15 @@ int _printf(const char *format, ...)
 		{"%d", di_printf, 0},  /* Decimal specifier, set uppercase to 0 */
 		{"%u", u_printf, 0},   /* Unsigned Integer specifier, set uppercase to 0 */
 		{"%o", o_printf, 0},   /* Octal specifier, set uppercase to 0 */
-		{"%x", x_printf, 0},   /* Hexadecimal specifier (lower), set uppercase to 0 */
-		{"%X", X_printf, 1},   /* Hexadecimal specifier (upper), set uppercase to 1 */
+		{"%x", x_printf, 0},   /* Hexadecimal specifier(lower), set uppercase to 0 */
+		{"%X", X_printf, 1},   /* Hexadecimal specifier(upper), set uppercase to 1 */
 		{"%p", p_printf, 0},   /* Pointer specifier, set uppercase to 0 */
 		{"%r", r_printf, 0}    /* Unknown specifier, set uppercase to 0 */
 	};
 	va_list list;
 	int x = 0, y, length = 0, found_match = 0;
 	va_start(list, format);
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
