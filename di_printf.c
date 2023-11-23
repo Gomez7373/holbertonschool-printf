@@ -9,6 +9,6 @@
 int di_printf(va_list args)
 {
     int num = va_arg(args, int);
-    return print_integer(num);
+    return (print_integer(num));
 }
 
