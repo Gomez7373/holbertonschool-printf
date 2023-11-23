@@ -10,12 +10,13 @@
 int print_integer(int num)
 {
 	int count = 0;
+	unsigned int abs_min;
 
 	if (num == INT_MIN)
 	{
 		_putchar('-');
 		count++;
-		unsigned int abs_min = INT_MAX + 1;
+		abs_min = INT_MAX + 1;
 		count += print_integer(abs_min / 10);
 		_putchar(abs_min % 10 + '0');
 		count++;
