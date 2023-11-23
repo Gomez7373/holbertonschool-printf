@@ -8,8 +8,10 @@ int print_hexadecimal(unsigned int num, int uppercase);
  *
  * Return: Number of characters printed
  */
+
 int X_printf(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
-    return print_hexadecimal(num, 1);  /* Use 1 for uppercase %X */
+	unsigned int num = va_arg(args, unsigned int);
+
+	return (print_hexadecimal(num, 1));  /* Use 1 for uppercase %X */
 }
