@@ -12,6 +12,6 @@ int print_octal(unsigned int num);
 int o_printf(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	
+
 	return (print_octal(num));
 }

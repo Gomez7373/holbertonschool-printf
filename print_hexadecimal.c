@@ -7,17 +7,17 @@
  *
  * Return: Number of characters printed
  */
+
 int print_hexadecimal(unsigned int num, int uppercase)
 {
-    char *hex_digits = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
-    int count = 0;
-
-    if (num / 16)
+	char *hex_digits = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
+	int count = 0;
+	
+	if (num / 16)
         count += print_hexadecimal(num / 16, uppercase);
-
-    _putchar(hex_digits[num % 16]);
-    count++;
-
-    return count;
+	
+	_putchar(hex_digits[num % 16]);
+	count++;
+	
+	return (count);
 }
-
