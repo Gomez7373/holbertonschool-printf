@@ -1,1 +1,1 @@
-cp of working NES to backup
+cp of working NES to backup.
