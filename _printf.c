@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	};
 	va_list list;
 	int x = 0, y, length = 0, found_match = 0;
+
 	va_start(list, format);
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
