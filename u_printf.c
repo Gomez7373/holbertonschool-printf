@@ -9,6 +9,7 @@
 
 int u_printf(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
-    return print_unsigned_integer(num);
+	unsigned int num = va_arg(args, unsigned int);
+
+	return (print_unsigned_integer(num));
 }
