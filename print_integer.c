@@ -16,7 +16,7 @@ int print_integer(int num)
 	{
 		_putchar('-');
 		count++;
-		abs_min = INT_MIN + 1;
+		abs_min = INT_MIN;
 		count += print_integer(abs_min / 10);
 		_putchar(abs_min % 10 + '0');
 		count++;
