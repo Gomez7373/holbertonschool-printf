@@ -8,22 +8,22 @@ int print_hexadecimal(unsigned int num, int uppercase);
  *
  * Return: Number of characters printed
  */
+
 int print_pointer(void *ptr)
 {
-    unsigned long int address = (unsigned long int)ptr;
-    int printed_chars = 0;
+	unsigned long int address = (unsigned long int)ptr;
+	int printed_chars = 0;
 
-    printed_chars += _putchar('0');
-    printed_chars += _putchar('x');
+	printed_chars += _putchar('0');
+	printed_chars += _putchar('x');
 
-    if (address == 0)
-    {
-        printed_chars += _putchar('0');
-        return (printed_chars);
-    }
+	if (address == 0)
+	{
+		printed_chars += _putchar('0');
 
-    printed_chars += print_hexadecimal(address, 0);
+		return (printed_chars);
+	}
+	printed_chars += print_hexadecimal(address, 0);
 
-    return (printed_chars);
+	return (printed_chars);
 }
-
