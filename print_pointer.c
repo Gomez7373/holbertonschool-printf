@@ -20,7 +20,7 @@ int print_pointer(void *ptr)
 	if (address == 0)
 	{
 		printed_chars += _putchar('0');
-		
+
 		return (printed_chars);
 	}
 	printed_chars += print_hexadecimal(address, 0);
