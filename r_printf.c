@@ -10,5 +10,5 @@ int r_printf(void)
 {
 	/* Placeholder for unknown specifier*/
 	/* You can add your logic or error handling here*/
-	return 0;
+	return (0);
 }
