@@ -10,18 +10,35 @@
 int print_integer(int num)
 {
 	int count = 0;
+	unsigned int abs_min;
 
-	if (num < 0)
+	if (num == INT_MIN)
 	{
 		_putchar('-');
 		count++;
-		num = -num;
+		abs_min = INT_MIN;
+		count += print_integer(abs_min / 10);
+		_putchar(abs_min % 10 + '0');
+		count++;
 	}
 
-	if (num / 10)
-		count += print_integer(num / 10);
+	else
+	{
 
-	_putchar(num % 10 + '0');
+		if (num < 0)
+		{
+			_putchar('-');
+			count++;
+			num = -num;
+		}
 
-	return (count + 1);
+		if (num / 10)
+			count += print_integer(num / 10);
+
+		_putchar(num % 10 + '0');
+		count++;
+	}
+
+	return (count);
+
 }
