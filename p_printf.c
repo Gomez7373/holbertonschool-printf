@@ -12,6 +12,6 @@ int print_pointer(void *ptr);
 int p_printf(va_list args)
 {
 	void *ptr = va_arg(args, void *);
-	
+
 	return (print_pointer(ptr));
 }
