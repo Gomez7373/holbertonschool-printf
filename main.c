@@ -59,8 +59,12 @@ int main(void)
     printf("Len:[%d]\n", len2);
 
     /* Test Case 11: Testing unknown specifier (%r assumed)*/
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+	_printf("Unknown:[%s]\n", "Custom");
+	printf("Unknown:[%s]\n", "Custom");
+
+    /*ive changed %r for %s*/
+/*    _printf("Unknown:[%r]\n");*/
+  /*  printf("Unknown:[%r]\n");*/
 
 /* Test Case 12: Testing with INT_MAX*/
     _printf("Max Integer:[%d]\n", INT_MAX);
