@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
+#include <stdbool.h>
 
 typedef struct print
 {
