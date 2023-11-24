@@ -34,6 +34,5 @@ int print_unsigned_integer(unsigned int num);
 int print_hexadecimal(unsigned int num, int uppercase);
 int print_octal(unsigned int num);
 int print_pointer(void *ptr);
-int r_printf(void);
 
 #endif /* MAIN_H */
