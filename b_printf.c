@@ -1,5 +1,5 @@
 #include <stdarg.h>
-#include "putchar.h"
+#include "main.h"
 /**
  * b_printf - Print an unsigned integer in binary format
  * @args: The variable arguments list
