@@ -30,7 +30,6 @@ int o_printf(va_list args);
 int x_printf(va_list args);
 int X_printf(va_list args);
 int p_printf(va_list args);
-/* int r_printf(void);      this was replaced by what its under*/
 int r_printf(va_list args);
 int print_unsigned_integer(unsigned int num);
 int print_hexadecimal(unsigned int num, int uppercase);
@@ -38,4 +37,5 @@ int print_octal(unsigned int num);
 int print_pointer(void *ptr);
 int b_printf(va_list args);
 int _putchar(char c);
+
 #endif /* MAIN_H */

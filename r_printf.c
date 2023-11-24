@@ -2,17 +2,30 @@
 #include "main.h"
 
 /**
- * r_printf - Handle unknown specifier %r
- * @args: The variable arguments list
+ * r_printf - function that prints reversed string
  *
- * Return: Number of characters printed
+ * @args: Arguments
+ *
+ * Return: string length
  */
+
 int r_printf(va_list args)
 {
-    /* Placeholder for unknown specifier handling */
-    /* You can add your logic or error handling here */
-    (void)args; /* Unused parameter warning */
+	char *s;
+	int x, length = 0;
 
-    return (0);
+	s = va_arg(args, char *);
+
+	while (s[length] != '\0')
+	{
+		length++;
+	}
+
+	for (x = length - 1; x >= 0; x--)
+	{
+		_putchar(s[x]);
+	}
+
+	return (length);
 }
 
