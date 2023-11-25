@@ -13,6 +13,7 @@ int print_pointer(void *ptr);
 int p_printf(va_list args, int uppercase)
 {
 	void *ptr = va_arg(args, void *);
+	int length = length += c[y].f(list, c[y].uppercase);
 
 	if (ptr == NULL)
 	{
