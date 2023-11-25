@@ -3,7 +3,7 @@
 int print_pointer(void *ptr);
 
 /**
- * p_printf - Print a pointer address
+ * p_printf - This function will handle the %p conversion specifier
  * @args: The variable arguments list
  *
  * Return: Number of characters printed

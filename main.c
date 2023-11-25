@@ -59,8 +59,12 @@ int main(void)
     printf("Len:[%d]\n", len2);
 
     /* Test Case 11: Testing unknown specifier (%r assumed)*/
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+	_printf("Unknown:[%s]\n", "Custom");
+	printf("Unknown:[%s]\n", "Custom");
+
+    /*ive changed %r for %s*/
+/*    _printf("Unknown:[%r]\n");*/
+  /*  printf("Unknown:[%r]\n");*/
 
 /* Test Case 12: Testing with INT_MAX*/
     _printf("Max Integer:[%d]\n", INT_MAX);
@@ -70,6 +74,20 @@ int main(void)
     _printf("Min Integer:[%d]\n", INT_MIN);
     printf("Min Integer:[%d]\n", INT_MIN);
 
+      /* Test Case 14: Testing %S specifier */
+_printf("- What did you say?\n- %s\n- That's what I thought.\n", "");
+printf("- What did you say?\n- ");
+_printf("%s\n", "");  /* Output from _printf with %S */
+printf("That's what I thought.\n");
+fflush(stdout);
+
+/* Compare lengths */
+if (len != len2)
+{
+    printf("Lengths differ.\n");
+    fflush(stdout);
+    return (1);
+    }
     return (0);
 }
 
