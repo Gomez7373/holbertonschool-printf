@@ -24,7 +24,7 @@ int p_printf(va_list args, int uppercase)
 	}
 	_printf("%p", ptr);
 
-	return (length);
+	return (_printf(length));
 }
 /*int p_printf(va_list args)
 {
