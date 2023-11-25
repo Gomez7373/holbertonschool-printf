@@ -5,7 +5,6 @@ int print_pointer(void *ptr);
 /**
  * p_printf - This function will handle the %p conversion specifier
  * @args: The variable arguments list
- * @uppercase: Uppercase flag
  *
  * Return: Number of characters printed
  */
