@@ -1,6 +1,7 @@
 #include "main.h"
 
 int print_pointer(void *ptr);
+int _printf(const char *format, ...);
 
 /**
  * p_printf - This function will handle the %p conversion specifier
