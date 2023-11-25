@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
 
@@ -15,22 +14,23 @@ int S_printf(va_list args)
 
     if (str == NULL)
     {
-        return 0;
+        return -1; /* Handle NULL string*/
     }
 
-    while (*str != '\0')
+    while (*str)
     {
         if (*str < 32 || *str >= 127)
         {
             count += _putchar('\\');
             count += _putchar('x');
-            count += _putchar("0123456789ABCDEF"[*str / 16]);
-            count += _putchar("0123456789ABCDEF"[*str % 16]);
+            count += _putchar((*str / 16) + '0');
+            count += _putchar((*str % 16) + '0');
         }
         else
         {
             count += _putchar(*str);
         }
+
         str++;
     }
 
