@@ -35,7 +35,7 @@ int u_printf(va_list args);
 int o_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash);
 int x_printf(va_list args);
 int X_printf(va_list args);
-int p_printf(va_list args);
+int p_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash);
 int r_printf(va_list args);
 int print_unsigned_integer(unsigned int num);
 int print_hexadecimal(unsigned int num, int uppercase);
