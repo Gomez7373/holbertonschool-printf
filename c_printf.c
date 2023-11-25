@@ -6,7 +6,7 @@
  * Return: 1
  */
 
-int c_printf(va_list args)
+int c_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
 {
 	char c;
 
