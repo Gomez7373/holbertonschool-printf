@@ -11,10 +11,16 @@
 #include <stdbool.h>
 #include <unistd.h>
 
-typedef struct print
+/*typedef struct print
 {
 	char *cs;
 	int (*f)();
+	int uppercase;
+} conversion_specifiers;*/
+
+typedef struct {
+	const char *cs;
+	int (*f)(va_list, int, int, int, int);
 	int uppercase;
 } conversion_specifiers;
 
