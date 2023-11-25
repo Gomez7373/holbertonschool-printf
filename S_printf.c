@@ -1,5 +1,5 @@
 #include <stdarg.h>
-#include "main.h"
+#include "putchar.h"
 
 /**
  * S_printf - Print a string with special character handling
@@ -14,7 +14,12 @@ int S_printf(va_list args)
 
     if (str == NULL)
     {
-        return -1; /* Handle NULL string*/
+        return -1; // Handle NULL string
+    }
+
+    if (*str == '\0')
+    {
+        return 0; // Handle empty string
     }
 
     while (*str)
