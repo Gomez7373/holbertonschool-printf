@@ -6,13 +6,9 @@
  * Return: 1
  */
 
-int c_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
+int c_printf(va_list args)
 {
 	char c;
-	(void)uppercase;
-	(void)flag_plus;
-	(void)flag_space;
-	(void)flag_hash;
 
 	c = va_arg(args, int);
 
