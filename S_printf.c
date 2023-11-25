@@ -7,17 +7,21 @@
  *
  * Return: Number of characters printed
  */
-int S_printf(va_list args)
+int S_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
 {
     char *str = va_arg(args, char *);
     int count = 0;
+    (void)uppercase;
+    (void)flag_plus;
+    (void)flag_space;
+    (void)flag_hash;
 
     if (str == NULL)
     {
         count += _putchar('-');
         count += _putchar(' ');
         count += _putchar('-');
-        return count; /* Handle NULL string */
+        return (count); /* Handle NULL string */
     }
 
     while (*str)
@@ -36,6 +40,6 @@ int S_printf(va_list args)
         str++;
     }
 
-    return count;
+    return (count);
 }
 
