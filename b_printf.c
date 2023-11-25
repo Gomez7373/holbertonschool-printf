@@ -6,15 +6,11 @@
  *
  * Return: Number of characters printed
  */
-int b_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
+int b_printf(va_list args)
 {
 	unsigned int num;
 	int binary_digits[32];
 	int i, count = 0;
-	(void)uppercase;
-	(void)flag_plus;
-	(void)flag_space;
-	(void)flag_hash;
 
 	num = va_arg(args, unsigned int);
 	
