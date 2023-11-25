@@ -11,11 +11,13 @@ int print_pointer(void *ptr);
 
 int p_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
 {
+	void *ptr;
 	(void)uppercase;
 	(void)flag_plus;
 	(void)flag_space;
 	(void)flag_hash;
-	void *ptr = va_arg(args, void *);
+
+	ptr = va_arg(args, void *);
 
 	return (print_pointer(ptr));
 }
