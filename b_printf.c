@@ -13,7 +13,7 @@ int b_printf(va_list args)
 	int i, count = 0;
 
 	num = va_arg(args, unsigned int);
-	
+
 	if (num == 0)
 	{
 		_putchar('0');
@@ -25,7 +25,7 @@ int b_printf(va_list args)
 		binary_digits[i] = num % 2;
 		num /= 2;
 	}
-	
+
 	for (i -= 1; i >= 0; i--)
 	{
 		_putchar(binary_digits[i] + '0');
