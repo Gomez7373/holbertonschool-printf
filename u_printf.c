@@ -7,7 +7,7 @@
  * Return: Number of characters printed
  */
 
-int u_printf(va_list args, int uppercase, int flag_plus, int flag_space; int flag_hash)
+int u_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
 {
 	unsigned int num;
 	(void)uppercase;
