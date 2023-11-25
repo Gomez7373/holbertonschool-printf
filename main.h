@@ -26,7 +26,7 @@ typedef struct {
 
 
 int _printf(const char *format, ...);
-int c_printf(va_list args);
+int c_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash);
 int s_printf(va_list args);
 int pct_printf(void);
 int di_printf(va_list args);
