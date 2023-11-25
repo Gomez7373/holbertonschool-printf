@@ -5,11 +5,11 @@
  *
  * Return: Number of characters printed (excluding the null byte)
  */
-typedef struct {
+/*typedef struct {
 	const char *cs;
 	int (*f)(va_list, int, int, int, int);
 	int uppercase;
-} conversion_specifiers;
+} conversion_specifiers;*/
 
 int _printf(const char *format, ...)
 {
