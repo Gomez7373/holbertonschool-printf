@@ -1,7 +1,6 @@
 #include "main.h"
 
 int print_pointer(void *ptr);
-int _printf(const char *format, ...);
 
 /**
  * p_printf - This function will handle the %p conversion specifier
@@ -11,24 +10,9 @@ int _printf(const char *format, ...);
  * Return: Number of characters printed
  */
 
-int p_printf(va_list args, int uppercase)
-{
-	void *ptr = va_arg(args, void *);
-	int length = length += c[y].f(list, c[y].uppercase);
-
-	if (ptr == NULL)
-	{
-		_printf("(nil)");
-
-		return (5);
-	}
-	_printf("%p", ptr);
-
-	return (_printf(length));
-}
-/*int p_printf(va_list args)
+int p_printf(va_list args)
 {
 	void *ptr = va_arg(args, void *);
 
 	return (print_pointer(ptr));
-}*/
+}
