@@ -1,5 +1,5 @@
 #include <stdarg.h>
-#include "putchar.h"
+#include "main.h"
 
 /**
  * S_printf - Print a string with special character handling
@@ -38,6 +38,6 @@ int S_printf(va_list args)
         str++;
     }
 
-    return count;
+    return (count);
 }
 
