@@ -14,21 +14,19 @@ int S_printf(va_list args)
 
     if (str == NULL)
     {
-        return -1; /* Handle NULL string*/
+        count += _putchar('-');
+        count += _putchar(' ');
+        count += _putchar('-');
+        return count; /* Handle NULL string */
     }
 
     while (*str)
     {
         if (*str < 32 || *str >= 127)
         {
-            count += _putchar('\\');
-            count += _putchar('x');
-            /* Ensure that the ASCII code is always
-	     *  printed in two characters*/
-            if (*str < 16)
-                count += _putchar('0');
-            count += _putchar((*str / 16) + '0');
-            count += _putchar((*str % 16) + '0');
+            count += _putchar('-');
+            count += _putchar(' ');
+            count += _putchar('-');
         }
         else
         {
@@ -38,6 +36,6 @@ int S_printf(va_list args)
         str++;
     }
 
-    return (count);
+    return count;
 }
 
