@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	};
 	va_list list;
 	int x = 0, y, length = 0, found_match = 0;
+	int flag_plus, flag_space, flag_hash;
 
 	va_start(list, format);
 
@@ -26,12 +27,26 @@ int _printf(const char *format, ...)
 	while (format[x] != '\0')
 	{
 		found_match = 0;
+		flag_plus = 0;
+		flag_space = 0;
+		flag_hash = 0;
+
+		while (format[x] == '+' || format[x] == ' ' || format[x] == '#')
+		{
+			if (format[x] == '+')
+				flag_plus = 1;
+			else if (format[x] == ' ')
+				flag_space = 1;
+			else if (format[x] == '#')
+				flag_hash = 1;
+			x++;
+		}
 		for (y = 0; y < 12; y++)  /* Update the size of the array */
 		{
-			if (c[y].cs[0] == format[x] && c[y].cs[1] == format[x + 1])
+			if (c[y].cs[0] == '%' && c[y].cs[1] == format[x])
 			{
-				length += c[y].f(list, c[y].uppercase);
-				x += 2;
+				length += c[y].f(list, c[y].uppercase, flag_plus, flag_space, flag_hash);
+				x++;
 				found_match = 1;
 				break;
 			}
