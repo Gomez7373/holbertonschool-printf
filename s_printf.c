@@ -6,14 +6,10 @@
 *
 * Return: Number of characters in the string
 */
-int s_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
+int s_printf(va_list args)
 {
 	char *s;
 	int x = 0;
-	(void)uppercase;
-	(void)flag_plus;
-	(void)flag_space;
-	(void)flag_hash;
 
 /* Extract the string argument from the variable arguments list */
 	s = va_arg(args, char *);

@@ -7,14 +7,10 @@
  *
  * Return: Number of characters printed
  */
-int S_printf(va_list args, int uppercase, int flag_plus, int flag_space, int flag_hash)
+int S_printf(va_list args)
 {
     char *str = va_arg(args, char *);
     int count = 0;
-    (void)uppercase;
-    (void)flag_plus;
-    (void)flag_space;
-    (void)flag_hash;
 
     if (str == NULL)
     {
