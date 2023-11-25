@@ -17,6 +17,11 @@ int S_printf(va_list args)
         return -1; /* Handle NULL string*/
     }
 
+    if (*str == '\0')
+    {
+        return 0; /* Handle empty string*/
+    }
+
     while (*str)
     {
         if (*str < 32 || *str >= 127)
