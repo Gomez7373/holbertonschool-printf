@@ -1,45 +1,39 @@
+#include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
 
 /**
- * S_printf - Print a string with special handling for non-printable characters
+ * S_printf - Print a string with special character handling
  * @args: The variable arguments list
  *
  * Return: Number of characters printed
  */
 int S_printf(va_list args)
 {
-char *str = va_arg(args, char *);
-int count = 0;
+    char *str = va_arg(args, char *);
+    int count = 0;
 
-if (str == NULL)
-{
-return -1; /* or handle NULL string accordingly*/
-}
+    if (str == NULL)
+    {
+        return 0;
+    }
 
-while (*str)
-{
-if (*str < 32 || *str >= 127)
-{
-/* Print non-printable characters as \x followed
-by the ASCII code in hexadecimal*/
-count += _putchar('\\');
-count += _putchar('x');
-/* Print ASCII code in uppercase
-*  hexadecimal (always 2 characters)*/
-count += _putchar((*str / 16 < 10) ?
-	(*str / 16 + '0') : (*str / 16 - 10 + 'A'));
-count += _putchar((*str % 16 < 10) ?
-	(*str % 16 + '0') : (*str % 16 - 10 + 'A'));
-}
-else
-{
-count += _putchar(*str);
-}
+    while (*str != '\0')
+    {
+        if (*str < 32 || *str >= 127)
+        {
+            count += _putchar('\\');
+            count += _putchar('x');
+            count += _putchar("0123456789ABCDEF"[*str / 16]);
+            count += _putchar("0123456789ABCDEF"[*str % 16]);
+        }
+        else
+        {
+            count += _putchar(*str);
+        }
+        str++;
+    }
 
-str++;
-}
-
-return count;
+    return count;
 }
 
