@@ -20,6 +20,7 @@ typedef struct print
 } conversion_specifiers;
 
 int _printf(const char *format, ...);
+int determine_precision(const char *format, int *precision);
 int c_printf(va_list args);
 int s_printf(va_list args);
 int pct_printf(void);
