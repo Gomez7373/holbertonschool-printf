@@ -5,6 +5,7 @@
  *
  * Return: Number of characters printed (excluding the null byte)
  */
+
 int _printf(const char *format, ...)
 {
 	conversion_specifiers c[] = {

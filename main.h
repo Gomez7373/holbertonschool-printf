@@ -10,6 +10,7 @@
 #include <limits.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <string.h>
 
 typedef struct print
 {
@@ -18,8 +19,8 @@ typedef struct print
 	int uppercase;
 } conversion_specifiers;
 
-
 int _printf(const char *format, ...);
+int determine_precision(const char *format, int *precision);
 int c_printf(va_list args);
 int s_printf(va_list args);
 int pct_printf(void);
