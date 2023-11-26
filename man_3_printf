@@ -5,8 +5,8 @@
 _printf \- Custom printf function that produces output according to a format
 
 .SH SYNOPSIS
-.B #include "main.h"
-.B int _printf(const char *format, ...);
+.B _printf \fIFORMAT\fR [\fIARGUMENT\fR]...
+
 .SH DESCRIPTION
 The \fI_printf\fR function is a custom implementation of the printf function that produces output according to a format. It supports various conversion specifiers for printing different types of data.
 
@@ -57,10 +57,15 @@ The custom _printf function returns the number of characters printed (excluding 
 
 .SH EXAMPLE
 .B #include "main.h"
+
 .B int main()
+
 .B {
+
 .B	_printf("Hello, %s!\n", "world");
+
 .B	return (0);
+
 .B }
 
 .SH BUGS
