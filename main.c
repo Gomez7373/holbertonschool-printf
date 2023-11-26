@@ -75,7 +75,7 @@ int main(void)
     printf("Min Integer:[%d]\n", INT_MIN);
 
       /* Test Case 14: Testing %S specifier */
-_printf("- What did you say?\n- %s\n- That's what I thought.\n", "");
+_printf("- What did you say?\n- %S\n- That's what I thought.\n", "");
 printf("- What did you say?\n- ");
 _printf("%s\n", "");  /* Output from _printf with %S */
 printf("That's what I thought.\n");
