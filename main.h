@@ -20,6 +20,7 @@ typedef struct print
 } conversion_specifiers;
 
 int _printf(const char *format, ...);
+int determine_precision(const char *format, int *precision);
 int c_printf(va_list args);
 int s_printf(va_list args);
 int pct_printf(void);
@@ -37,5 +38,4 @@ int print_octal(unsigned int num);
 int print_pointer(void *ptr);
 int b_printf(va_list args);
 int _putchar(char c);
-int S_printf(va_list args);
 #endif /* MAIN_H */
