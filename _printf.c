@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 		{"%i", di_printf, 0}, {"%d", di_printf, 0}, {"%u", u_printf, 0},
 		{"%o", o_printf, 0}, {"%x", x_printf, 0}, {"%X", X_printf, 1},
 		{"%p", p_printf, 0}, {"%r", r_printf, 0}, {"%b", b_printf, 0},
-		{"%S", S_printf, 0}
 	};
 	va_list list;
 	int x = 0, y, length = 0, found_match = 0;
