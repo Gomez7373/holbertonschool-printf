@@ -74,12 +74,12 @@ int main(void)
     _printf("Min Integer:[%d]\n", INT_MIN);
     printf("Min Integer:[%d]\n", INT_MIN);
 
-      /* Test Case 14: Testing %S specifier */
+      /* Test Case 14: Testing %S specifier 
 _printf("- What did you say?\n- %S\n- That's what I thought.\n", "");
 printf("- What did you say?\n- ");
-_printf("%s\n", "");  /* Output from _printf with %S */
+_printf("%s\n", "");   Output from _printf with %S 
 printf("That's what I thought.\n");
-fflush(stdout);
+fflush(stdout);*/
 
 /* Compare lengths */
 if (len != len2)
