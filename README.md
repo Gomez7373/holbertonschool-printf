@@ -2,7 +2,7 @@
 
 ### Description
 
-For this printf project, we were divided into groups and given the task of creating our own custom _printf function. During the course of the week, all three of us worked together to create it. Our custom _printf function 
+For this printf project, we were divided into groups and given the task of creating our own custom _printf function. During the course of the week, all three of us worked together to create it. Our custom _printf function produces output according to a format. It will return the number of characters printed (excluding the null byte used to end output to strings).
 
 ----------------
 ### Resources
@@ -65,13 +65,13 @@ Specifier                  |Output
 Name                |
 |----------------------|
 | b_printf.c | 
-| c_printf.c |
+| c_printf.c | 
 | di_printf.c |
-| main.c |
 | main.h |
 | man_3_printf |
 | o_printf.c |
 | pct_printf.c |
+| p_printf.c |
 | _printf.c |
 | print_hexadecimal.c |
 | print_integer.c |
