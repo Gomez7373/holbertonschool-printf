@@ -62,8 +62,8 @@ Specifier                  |Output
 
 ##### List of files contained in this repository
 
-Name                |Description
-|----------------------|-------------------------------------------|
+Name                |
+|----------------------|
 | b_printf.c | 
 | c_printf.c |
 | di_printf.c |
